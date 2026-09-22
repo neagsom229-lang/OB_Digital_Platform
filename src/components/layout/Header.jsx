@@ -14,7 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-app/80 border-b border-subtle transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-xl bg-linear-to-tr from-indigo-600 via-sky-500 to-emerald-400 flex items-center justify-center text-white shadow-md shadow-indigo-600/20 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-sky-500 to-emerald-400 flex items-center justify-center text-white shadow-md shadow-indigo-600/20 group-hover:scale-105 transition-transform">
             <Layers className="w-4 h-4" />
           </div>
           <span className="font-bold text-lg tracking-tight text-main">
@@ -103,25 +103,14 @@ export default function Header() {
           >
             Sources
           </NavLink>
-
-          <NavLink
-  to="/curriculum"
-  className={({ isActive }) =>
-    `px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors ${
-      isActive ? 'text-indigo-400 bg-indigo-500/10' : 'text-muted hover:text-main'
-    }`
-  }
->
-  Curriculum (12 Modules)
-</NavLink>
         </nav>
 
-        {/* Right Actions */}
+        {/* Header Right Actions */}
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(true)}
-            className="md:hidden p-2 rounded-xl text-muted hover:text-main bg-card-subtle border border-subtle cursor-pointer"
+            className="md:hidden p-2 rounded-xl text-muted hover:text-main bg-card-subtle border border-subtle active:scale-95 transition-transform cursor-pointer"
             aria-label="Open mobile menu"
           >
             <Menu className="w-5 h-5" />
@@ -129,6 +118,7 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Render Portal outside the Header stacking context */}
       <MobileNav isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
     </header>
   )
