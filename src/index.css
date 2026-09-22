@@ -1,10 +1,12 @@
-// FILE: src/index.css
+
 @import "tailwindcss";
 
 /* ==========================================================================
    1. TAILWIND CSS v4 THEME CONFIGURATION
    ========================================================================== */
-@theme {
+/* Tailwind CSS v4 directive: the editor's built-in CSS validator does not
+  recognize @theme, but Tailwind processes it during the build. */
+@theme inline {
   /* Brand Primary Scales (Indigo) */
   --color-brand-50: #eef2ff;
   --color-brand-100: #e0e7ff;
