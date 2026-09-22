@@ -49,9 +49,9 @@ export default function CharterPreview({ data }) {
         </div>
       </div>
 
-      <div className="p-5 flex-1 overflow-auto max-h-150 bg-slate-950/40 text-xs font-mono text-slate-300 leading-relaxed whitespace-pre-wrap select-all">
-        {markdown}
-      </div>
+<div className="p-5 flex-1 overflow-auto max-h-[600px] bg-slate-950/40 text-xs font-mono text-slate-300 leading-relaxed whitespace-pre-wrap break-words select-all">
+  {markdown}
+</div>
     </div>
   )
 }
