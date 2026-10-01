@@ -47,7 +47,10 @@ await writeFile(
 const indexPath = new URL('../index.html', import.meta.url)
 const indexHtml = await readFile(indexPath, 'utf8')
 const canonicalHtml = indexHtml
-  .replace('href="/" />', `href="${siteUrl}/" />`)
+  .replace(
+    '<!-- SITE_CANONICAL_PLACEHOLDER -->',
+    `<link rel="canonical" href="${siteUrl}/" />`
+  )
   .replace('property="og:url" content="/"', `property="og:url" content="${siteUrl}/"`)
   .replaceAll('content="/social-preview.svg"', `content="${siteUrl}/social-preview.svg"`)
 
