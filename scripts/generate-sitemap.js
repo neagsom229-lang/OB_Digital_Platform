@@ -48,11 +48,14 @@ const indexPath = new URL('../index.html', import.meta.url)
 const indexHtml = await readFile(indexPath, 'utf8')
 const canonicalHtml = indexHtml
   .replace(
-    '<!-- SITE_CANONICAL_PLACEHOLDER -->',
-    `<link rel="canonical" href="${siteUrl}/" />`
+    /<!-- SITE_METADATA_START -->[\s\S]*?<!-- SITE_METADATA_END -->/,
+    `<!-- SITE_METADATA_START -->\n    <link rel="canonical" href="${siteUrl}/" />\n    <!-- SITE_METADATA_END -->`,
   )
-  .replace('property="og:url" content="/"', `property="og:url" content="${siteUrl}/"`)
-  .replaceAll('content="/social-preview.svg"', `content="${siteUrl}/social-preview.svg"`)
+  .replace(/property="og:url" content="[^"]*"/, `property="og:url" content="${siteUrl}/"`)
+  .replaceAll(
+    /content="(?:https?:\/\/[^"]+)?\/social-preview\.svg"/g,
+    `content="${siteUrl}/social-preview.svg"`,
+  )
 
 if (canonicalHtml === indexHtml) {
   throw new Error('Could not find expected canonical and social-image metadata in index.html')
