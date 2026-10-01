@@ -17,14 +17,16 @@ export default function SourcesPage() {
             Empirical References & Citations
           </h1>
           <p className="mt-3 text-base text-muted leading-relaxed">
-            The concepts on this platform build on peer-reviewed research across organizational behavior, human-computer interaction, and applied psychology. Each paper can be cross-verified directly on Google Scholar.
+            The concepts on this platform build on peer-reviewed research across organizational
+            behavior, human-computer interaction, and applied psychology. Each paper can be
+            cross-verified directly on Google Scholar.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {academicSources.map((src) => {
             const scholarUrl = `https://scholar.google.com/scholar?q=${encodeURIComponent(
-              src.scholarQuery
+              src.scholarQuery,
             )}`
 
             return (
@@ -51,7 +53,10 @@ export default function SourcesPage() {
         <div className="mt-12 p-6 rounded-2xl bg-card border border-subtle">
           <h3 className="text-sm font-bold text-main mb-2">Note on General Terminology</h3>
           <p className="text-xs text-muted leading-relaxed">
-            Terms marked with &ldquo;—&rdquo; in the Lexicon (e.g. <em>Virtual Team, Hybrid Work, Digital OB, RFC, Right to Disconnect</em>) represent widely adopted industry standards, legal statutes, or generalized socio-technical nomenclature without a single canonical founding paper.
+            Terms marked with &ldquo;—&rdquo; in the Lexicon (e.g.{' '}
+            <em>Virtual Team, Hybrid Work, Digital OB, RFC, Right to Disconnect</em>) represent
+            widely adopted industry standards, legal statutes, or generalized socio-technical
+            nomenclature without a single canonical founding paper.
           </p>
         </div>
       </div>

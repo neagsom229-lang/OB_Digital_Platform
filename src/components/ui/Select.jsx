@@ -11,7 +11,10 @@ export default function Select({
   return (
     <div className={`space-y-1.5 ${className}`}>
       {label && (
-        <label htmlFor={id} className="block text-xs font-semibold text-muted uppercase tracking-wider">
+        <label
+          htmlFor={id}
+          className="block text-xs font-semibold text-muted uppercase tracking-wider"
+        >
           {label}
         </label>
       )}
@@ -22,7 +25,7 @@ export default function Select({
         className="w-full bg-card-subtle border border-subtle hover:border-hover text-main rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors cursor-pointer"
       >
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value} className="bg-slate-900 text-slate-100">
+          <option key={opt.value} value={opt.value} className="bg-card text-main">
             {opt.label}
           </option>
         ))}

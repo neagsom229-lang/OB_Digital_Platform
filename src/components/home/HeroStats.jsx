@@ -4,7 +4,8 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 function StatItem({ value, label }) {
   const shouldReduceMotion = useReducedMotion()
-  const displayValue = shouldReduceMotion ? value : useCountUp(value, 1000)
+  const animatedValue = useCountUp(value, 1000, !shouldReduceMotion)
+  const displayValue = shouldReduceMotion ? value : animatedValue
 
   return (
     <div className="flex flex-col items-center sm:items-start text-center sm:text-left">

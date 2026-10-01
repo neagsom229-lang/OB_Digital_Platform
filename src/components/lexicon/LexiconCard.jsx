@@ -48,9 +48,7 @@ export default function LexiconCard({ item }) {
       </div>
 
       <div className="pt-4 border-t border-subtle mt-4">
-        <span className="text-[11px] font-mono text-faint block">
-          Source: {item.source}
-        </span>
+        <span className="text-[11px] font-mono text-faint block">Source: {item.source}</span>
       </div>
     </Card>
   )

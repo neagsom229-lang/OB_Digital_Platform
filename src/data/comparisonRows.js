@@ -18,11 +18,13 @@ export const comparisonRows = [
   {
     dimension: 'Collaboration Ecosystem',
     traditional: 'Human-to-human exclusively, manual spreadsheets, localized whiteboard notes.',
-    digital: 'Human-AI co-intelligence (centaurs & cyborgs), algorithmic workflows, digital repositories.',
+    digital:
+      'Human-AI co-intelligence (centaurs & cyborgs), algorithmic workflows, digital repositories.',
   },
   {
     dimension: 'Well-Being & Boundaries',
     traditional: 'Boundaries enforced by physical commute and departure from office building.',
-    digital: 'Requires deliberate boundary management, right to disconnect, and detachment rituals.',
+    digital:
+      'Requires deliberate boundary management, right to disconnect, and detachment rituals.',
   },
 ]

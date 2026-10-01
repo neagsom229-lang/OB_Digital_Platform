@@ -37,7 +37,8 @@ export default function AuditPage() {
             Digital OB Team Health Audit
           </h1>
           <p className="mt-3 text-base text-muted leading-relaxed">
-            Evaluate your team&apos;s asynchronous discipline, psychological safety, and remote fairness across 6 fundamental behavioral dimensions.
+            Evaluate your team&apos;s asynchronous discipline, psychological safety, and remote
+            fairness across 6 fundamental behavioral dimensions.
           </p>
           <p className="mt-2 text-xs text-faint italic">
             Reflective self-assessment, not a validated psychometric instrument.
@@ -52,7 +53,12 @@ export default function AuditPage() {
                 Progress: {answeredCount} of {auditQuestions.length} answered
               </span>
               {answeredCount > 0 && (
-                <Button variant="ghost" size="sm" onClick={handleReset} className="text-xs text-muted hover:text-rose-400">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleReset}
+                  className="text-xs text-muted hover:text-rose-400"
+                >
                   <RotateCcw className="w-3 h-3 mr-1" />
                   Reset Answers
                 </Button>
@@ -75,14 +81,15 @@ export default function AuditPage() {
               <AuditResult result={result} answers={answers} />
             ) : (
               <div className="bg-card border border-subtle rounded-2xl p-8 text-center space-y-4">
-                <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto text-muted">
+                <div className="w-12 h-12 rounded-full bg-card-subtle flex items-center justify-center mx-auto text-muted">
                   <AlertCircle className="w-6 h-6 text-indigo-400" />
                 </div>
                 <h3 className="text-lg font-bold text-main">Diagnostic Pending</h3>
                 <p className="text-sm text-muted leading-relaxed">
-                  Answer all 6 questions to see your team&apos;s diagnostic score, health tier, and dimensional radar visualization.
+                  Answer all 6 questions to see your team&apos;s diagnostic score, health tier, and
+                  dimensional radar visualization.
                 </p>
-                <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden mt-4">
+                <div className="w-full bg-card-subtle rounded-full h-2 overflow-hidden mt-4">
                   <div
                     className="bg-indigo-500 h-full transition-all duration-300"
                     style={{ width: `${(answeredCount / 6) * 100}%` }}

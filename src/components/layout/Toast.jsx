@@ -23,12 +23,8 @@ export default function Toast({ toast, onClose }) {
               {toast.type === 'success' && (
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
               )}
-              {toast.type === 'error' && (
-                <AlertCircle className="w-5 h-5 text-rose-400 shrink-0" />
-              )}
-              {toast.type === 'info' && (
-                <Info className="w-5 h-5 text-indigo-400 shrink-0" />
-              )}
+              {toast.type === 'error' && <AlertCircle className="w-5 h-5 text-rose-400 shrink-0" />}
+              {toast.type === 'info' && <Info className="w-5 h-5 text-indigo-400 shrink-0" />}
               <span className="text-sm font-medium">{toast.message}</span>
             </div>
             <button

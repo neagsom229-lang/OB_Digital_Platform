@@ -1,5 +1,5 @@
 // FILE: src/components/home/PillarTabs.jsx
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { pillars } from '../../data/pillars'
 import PillarDetailCard from './PillarDetailCard'
@@ -52,7 +52,7 @@ export default function PillarTabs() {
               onClick={() => setActiveTab(pillar.id)}
               onKeyDown={(e) => handleKeyDown(e, idx)}
               className={`relative px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer ${
-                isActive ? 'text-main' : 'text-muted hover:text-main hover:bg-slate-800/30'
+                isActive ? 'text-main' : 'text-muted hover:text-main hover:bg-card-subtle'
               }`}
             >
               <div className="flex items-center gap-2">

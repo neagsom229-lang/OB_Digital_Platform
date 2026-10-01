@@ -11,15 +11,13 @@ export const academicSources = [
     id: 'bailenson-2021',
     citation:
       'Bailenson (2021). Nonverbal overload: A theoretical argument for the causes of Zoom fatigue. Technology, Mind, and Behavior.',
-    scholarQuery:
-      'Bailenson Nonverbal overload theoretical argument causes Zoom fatigue',
+    scholarQuery: 'Bailenson Nonverbal overload theoretical argument causes Zoom fatigue',
   },
   {
     id: 'barber-2015',
     citation:
       'Barber & Santuzzi (2015). Please respond ASAP: Workplace telepressure and employee recovery. Journal of Occupational Health Psychology.',
-    scholarQuery:
-      'Barber Santuzzi Please respond ASAP Workplace telepressure employee recovery',
+    scholarQuery: 'Barber Santuzzi Please respond ASAP Workplace telepressure employee recovery',
   },
   {
     id: 'bloom-2015',
@@ -58,8 +56,7 @@ export const academicSources = [
     id: 'edmondson-1999',
     citation:
       'Edmondson (1999). Psychological safety and learning behavior in work teams. Administrative Science Quarterly.',
-    scholarQuery:
-      'Edmondson Psychological safety and learning behavior in work teams',
+    scholarQuery: 'Edmondson Psychological safety and learning behavior in work teams',
   },
   {
     id: 'foucault-1975',
@@ -77,8 +74,7 @@ export const academicSources = [
     id: 'johns-2010',
     citation:
       'Johns (2010). Presenteeism in the workplace: A review and research agenda. Journal of Organizational Behavior.',
-    scholarQuery:
-      'Johns Presenteeism in the workplace review and research agenda',
+    scholarQuery: 'Johns Presenteeism in the workplace review and research agenda',
   },
   {
     id: 'lee-2015',
@@ -91,22 +87,19 @@ export const academicSources = [
     id: 'leroy-2009',
     citation:
       'Leroy (2009). Why is it so hard to do my work? The challenge of attention residue when switching between work tasks. Organizational Behavior and Human Decision Processes.',
-    scholarQuery:
-      'Leroy Why is it so hard to do my work challenge of attention residue',
+    scholarQuery: 'Leroy Why is it so hard to do my work challenge of attention residue',
   },
   {
     id: 'mark-2008',
     citation:
       'Mark, Gudith & Klocke (2008). The cost of interrupted work: More speed and stress. CHI 2008.',
-    scholarQuery:
-      'Mark Gudith Klocke The cost of interrupted work More speed and stress',
+    scholarQuery: 'Mark Gudith Klocke The cost of interrupted work More speed and stress',
   },
   {
     id: 'mayer-1995',
     citation:
       'Mayer, Davis & Schoorman (1995). An integrative model of organizational trust. Academy of Management Review.',
-    scholarQuery:
-      'Mayer Davis Schoorman An integrative model of organizational trust',
+    scholarQuery: 'Mayer Davis Schoorman An integrative model of organizational trust',
   },
   {
     id: 'meyerson-1996',
@@ -116,8 +109,7 @@ export const academicSources = [
   },
   {
     id: 'mollick-2024',
-    citation:
-      'Mollick (2024). Co-Intelligence: Living and Working with AI. Portfolio.',
+    citation: 'Mollick (2024). Co-Intelligence: Living and Working with AI. Portfolio.',
     scholarQuery: 'Ethan Mollick Co-Intelligence Living and Working with AI',
   },
   {
@@ -130,13 +122,11 @@ export const academicSources = [
     id: 'nippert-eng-1996',
     citation:
       'Nippert-Eng (1996). Home and Work: Negotiating Boundaries Through Everyday Life. University of Chicago Press.',
-    scholarQuery:
-      'Nippert-Eng Home and Work Negotiating Boundaries Everyday Life',
+    scholarQuery: 'Nippert-Eng Home and Work Negotiating Boundaries Everyday Life',
   },
   {
     id: 'nonaka-1995',
-    citation:
-      'Nonaka & Takeuchi (1995). The Knowledge-Creating Company. Oxford University Press.',
+    citation: 'Nonaka & Takeuchi (1995). The Knowledge-Creating Company. Oxford University Press.',
     scholarQuery: 'Nonaka Takeuchi The Knowledge-Creating Company',
   },
   {
@@ -148,13 +138,11 @@ export const academicSources = [
     id: 'ravid-2020',
     citation:
       'Ravid, Tomczak, White & Behrend (2020). EPM 20/20: A review, framework, and research agenda for electronic performance monitoring. Journal of Management.',
-    scholarQuery:
-      'Ravid Tomczak White Behrend EPM 20/20 electronic performance monitoring',
+    scholarQuery: 'Ravid Tomczak White Behrend EPM 20/20 electronic performance monitoring',
   },
   {
     id: 'risko-2016',
-    citation:
-      'Risko & Gilbert (2016). Cognitive offloading. Trends in Cognitive Sciences.',
+    citation: 'Risko & Gilbert (2016). Cognitive offloading. Trends in Cognitive Sciences.',
     scholarQuery: 'Risko Gilbert Cognitive offloading Trends in Cognitive Sciences',
   },
   {
@@ -173,8 +161,7 @@ export const academicSources = [
     id: 'sonnentag-2007',
     citation:
       'Sonnentag & Fritz (2007). The Recovery Experience Questionnaire: Development and validation of a measure for assessing recuperation and unwinding from work. Journal of Occupational Health Psychology.',
-    scholarQuery:
-      'Sonnentag Fritz The Recovery Experience Questionnaire assessing recuperation',
+    scholarQuery: 'Sonnentag Fritz The Recovery Experience Questionnaire assessing recuperation',
   },
   {
     id: 'tarafdar-2007',
@@ -185,8 +172,7 @@ export const academicSources = [
   },
   {
     id: 'who-icd11',
-    citation:
-      'World Health Organization. ICD-11: Burn-out (occupational phenomenon).',
+    citation: 'World Health Organization. ICD-11: Burn-out (occupational phenomenon).',
     scholarQuery: 'World Health Organization ICD-11 Burn-out occupational phenomenon',
   },
 ]

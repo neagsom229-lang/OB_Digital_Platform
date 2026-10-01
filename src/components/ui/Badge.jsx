@@ -1,12 +1,7 @@
 // FILE: src/components/ui/Badge.jsx
-export default function Badge({
-  children,
-  variant = 'default',
-  size = 'md',
-  className = '',
-}) {
+export default function Badge({ children, variant = 'default', size = 'md', className = '' }) {
   const variants = {
-    default: 'bg-slate-800/80 text-slate-300 border-slate-700/60',
+    default: 'bg-card-subtle text-muted border-subtle',
     brand: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30',
     success: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
     warning: 'bg-amber-500/10 text-amber-400 border-amber-500/30',

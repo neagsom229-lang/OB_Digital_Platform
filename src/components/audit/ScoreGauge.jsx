@@ -21,7 +21,7 @@ export default function ScoreGauge({ score, maxScore = 30 }) {
           cx="70"
           cy="70"
           r={radius}
-          className="stroke-slate-800"
+          className="stroke-[var(--border-hover)]"
           strokeWidth={strokeWidth}
           fill="transparent"
         />
@@ -32,17 +32,15 @@ export default function ScoreGauge({ score, maxScore = 30 }) {
           stroke={strokeColor}
           strokeWidth={strokeWidth}
           strokeDasharray={circumference}
-          initial={{ strokeDashoffset: circumference }}
-          animate={{ strokeDashoffset: shouldReduceMotion ? strokeDashoffset : strokeDashoffset }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          initial={shouldReduceMotion ? false : { strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
           strokeLinecap="round"
           fill="transparent"
         />
       </svg>
       <div className="absolute flex flex-col items-center justify-center text-center">
-        <span className="text-3xl font-extrabold font-mono text-main tracking-tight">
-          {score}
-        </span>
+        <span className="text-3xl font-extrabold font-mono text-main tracking-tight">{score}</span>
         <span className="text-[11px] font-medium text-muted uppercase tracking-wider">
           / {maxScore} pts
         </span>

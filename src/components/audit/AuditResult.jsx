@@ -11,9 +11,7 @@ export default function AuditResult({ result, answers }) {
           {result.tier}
         </Badge>
         <h3 className="text-2xl font-bold text-main">{result.label}</h3>
-        <p className="text-xs text-muted max-w-md mx-auto leading-relaxed">
-          {result.description}
-        </p>
+        <p className="text-xs text-muted max-w-md mx-auto leading-relaxed">{result.description}</p>
       </div>
 
       <ScoreGauge score={result.totalScore} maxScore={result.maxScore} />

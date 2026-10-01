@@ -15,7 +15,8 @@ export default function Footer() {
               <span className="font-bold text-main tracking-tight">DigitalOB Hub</span>
             </div>
             <p className="text-sm text-muted max-w-md leading-relaxed">
-              Synthesizing organizational psychology, asynchronous software engineering workflows, and human-AI systems into high-trust operational practices.
+              Synthesizing organizational psychology, asynchronous software engineering workflows,
+              and human-AI systems into high-trust operational practices.
             </p>
             <p className="text-xs text-faint">
               Content last reviewed: September 2026. Educational summary, not professional advice.
@@ -23,7 +24,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-main uppercase tracking-wider mb-3">Tools & Assessment</h4>
+            <h4 className="text-xs font-bold text-main uppercase tracking-wider mb-3">
+              Tools & Assessment
+            </h4>
             <ul className="space-y-2 text-sm text-muted">
               <li>
                 <Link to="/charter" className="hover:text-indigo-400 transition-colors">
@@ -44,7 +47,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-main uppercase tracking-wider mb-3">Foundations & Citations</h4>
+            <h4 className="text-xs font-bold text-main uppercase tracking-wider mb-3">
+              Foundations & Citations
+            </h4>
             <ul className="space-y-2 text-sm text-muted">
               <li>
                 <Link to="/#pillars" className="hover:text-indigo-400 transition-colors">

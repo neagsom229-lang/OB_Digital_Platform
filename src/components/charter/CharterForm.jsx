@@ -1,14 +1,10 @@
 // FILE: src/components/charter/CharterForm.jsx
-import { useState } from 'react'
 import TextInput from '../ui/TextInput'
 import Select from '../ui/Select'
 import Button from '../ui/Button'
 import { Sparkles, RotateCcw, Clock } from 'lucide-react'
 
 export default function CharterForm({ data, onChange, onReset }) {
-  const [zoneA, setZoneA] = useState('America/New_York')
-  const [zoneB, setZoneB] = useState('Europe/London')
-
   const presets = [
     {
       name: 'Async-First Engineering',
@@ -17,7 +13,8 @@ export default function CharterForm({ data, onChange, onReset }) {
         responseSla: 'Within 4 business hours',
         syncWindow: '14:00 – 16:00 UTC (10:00 AM – 12:00 PM ET)',
         timezones: 'UTC-5 to UTC+1 (about 2h overlap on 9–5 schedules)',
-        escalationPolicy: 'PagerDuty high-severity on-call rotation only; Slack DMs are never used for emergencies.',
+        escalationPolicy:
+          'PagerDuty high-severity on-call rotation only; Slack DMs are never used for emergencies.',
         docHub: 'GitHub Wiki / Notion RFCs',
       },
     },
@@ -28,7 +25,8 @@ export default function CharterForm({ data, onChange, onReset }) {
         responseSla: 'Within 2 business hours during core window',
         syncWindow: '13:00 – 16:00 UTC (9:00 AM – 12:00 PM ET)',
         timezones: 'UTC-5 to UTC+1 (about 2h overlap on 9–5 schedules)',
-        escalationPolicy: 'Phone call to team lead if a production deployment issue blocks a launch.',
+        escalationPolicy:
+          'Phone call to team lead if a production deployment issue blocks a launch.',
         docHub: 'Notion Workspace & Figma Design System',
       },
     },
@@ -39,7 +37,8 @@ export default function CharterForm({ data, onChange, onReset }) {
         responseSla: 'Immediate for Sev-1; within 4 hours for general threads',
         syncWindow: '14:00 – 15:30 UTC (10:00 AM – 11:30 AM ET)',
         timezones: 'UTC-8 to UTC+2 (Global distributed follow-the-sun)',
-        escalationPolicy: 'Automated monitoring alerts via Opsgenie; strictly no manual chat pings.',
+        escalationPolicy:
+          'Automated monitoring alerts via Opsgenie; strictly no manual chat pings.',
         docHub: 'Confluence Runbooks & GitHub Incidents',
       },
     },
@@ -52,9 +51,18 @@ export default function CharterForm({ data, onChange, onReset }) {
   ]
 
   const syncWindowOptions = [
-    { value: '14:00 – 16:00 UTC (10:00 AM – 12:00 PM ET)', label: '14:00 – 16:00 UTC (10:00 AM – 12:00 PM ET)' },
-    { value: '15:00 – 17:00 UTC (11:00 AM – 1:00 PM ET)', label: '15:00 – 17:00 UTC (11:00 AM – 1:00 PM ET)' },
-    { value: 'Flexible / Asynchronous Standup Only', label: 'Flexible / Asynchronous Standup Only' },
+    {
+      value: '14:00 – 16:00 UTC (10:00 AM – 12:00 PM ET)',
+      label: '14:00 – 16:00 UTC (10:00 AM – 12:00 PM ET)',
+    },
+    {
+      value: '15:00 – 17:00 UTC (11:00 AM – 1:00 PM ET)',
+      label: '15:00 – 17:00 UTC (11:00 AM – 1:00 PM ET)',
+    },
+    {
+      value: 'Flexible / Asynchronous Standup Only',
+      label: 'Flexible / Asynchronous Standup Only',
+    },
   ]
 
   return (
@@ -70,7 +78,7 @@ export default function CharterForm({ data, onChange, onReset }) {
               key={preset.name}
               type="button"
               onClick={() => onChange(preset.config)}
-              className="text-xs font-medium px-3 py-1.5 rounded-lg bg-card-subtle hover:bg-slate-800 border border-subtle hover:border-hover text-muted hover:text-main transition-colors cursor-pointer"
+              className="text-xs font-medium px-3 py-1.5 rounded-lg bg-card-subtle hover:bg-border-subtle border border-subtle hover:border-hover text-muted hover:text-main transition-colors cursor-pointer"
             >
               <Sparkles className="w-3 h-3 inline mr-1 text-indigo-400" />
               {preset.name}
@@ -141,12 +149,19 @@ export default function CharterForm({ data, onChange, onReset }) {
           Timezone Overlap Check
         </div>
         <p className="text-xs text-muted">
-          Typical 9:00 AM – 5:00 PM local schedules with a 6-hour gap (e.g. New York ET and London GMT) produce approximately <strong>2 hours</strong> of shared working time (14:00 – 16:00 UTC / 10:00 AM – 12:00 PM ET). Protect this window for high-ambiguity discussions!
+          Typical 9:00 AM – 5:00 PM local schedules with a 6-hour gap (e.g. New York ET and London
+          GMT) produce approximately <strong>2 hours</strong> of shared working time (14:00 – 16:00
+          UTC / 10:00 AM – 12:00 PM ET). Protect this window for high-ambiguity discussions!
         </p>
       </div>
 
       <div className="pt-2">
-        <Button variant="ghost" size="sm" onClick={onReset} className="w-full text-muted hover:text-rose-400">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={onReset}
+          className="w-full text-muted hover:text-rose-400"
+        >
           <RotateCcw className="w-3.5 h-3.5 mr-1" />
           Reset to Blank Form
         </Button>

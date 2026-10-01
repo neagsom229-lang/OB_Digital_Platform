@@ -46,7 +46,8 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mt-6 text-lg sm:text-xl text-muted leading-relaxed"
           >
-            Translating classic behavioral science, asynchronous software engineering, and human-AI collaboration into high-trust operational realities.
+            Translating classic behavioral science, asynchronous software engineering, and human-AI
+            collaboration into high-trust operational realities.
           </motion.p>
 
           <motion.p
@@ -55,7 +56,8 @@ export default function Hero() {
             transition={{ delay: 0.25, duration: 0.5 }}
             className="mt-2 text-xs sm:text-sm text-faint italic"
           >
-            Micro/meso/macro is a standard OB structure. The five pillars and the label &apos;Digital OB&apos; are this hub&apos;s own practitioner framing.
+            Micro/meso/macro is a standard OB structure. The five pillars and the label
+            &apos;Digital OB&apos; are this hub&apos;s own practitioner framing.
           </motion.p>
 
           <motion.div

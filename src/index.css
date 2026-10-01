@@ -1,5 +1,4 @@
-
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ==========================================================================
    1. TAILWIND CSS v4 THEME CONFIGURATION
@@ -20,8 +19,9 @@
   --color-brand-900: #312e81;
 
   /* Typography */
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Semantic Color Utilities mapped to CSS Custom Properties */
   --color-app: var(--bg-app);
@@ -38,8 +38,30 @@
    2. DESIGN TOKENS & COLOR SCHEMES
    ========================================================================== */
 
-/* Dark Mode Tokens (Default) */
+/* Shared spacing, type, shape, and elevation tokens */
 :root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --type-xs: 0.75rem;
+  --type-sm: 0.875rem;
+  --type-base: 1rem;
+  --type-lg: 1.125rem;
+  --type-xl: 1.25rem;
+  --type-2xl: 1.5rem;
+  --type-3xl: 1.875rem;
+  --radius-control: 0.75rem;
+  --radius-card: 1rem;
+  --radius-panel: 1.5rem;
+  --shadow-card: 0 12px 32px rgba(15, 23, 42, 0.08);
+  --shadow-dialog: 0 24px 72px rgba(2, 6, 23, 0.25);
+
+  /* Dark Mode Tokens (Default) */
   --bg-app: #030712;
   --bg-card: #0b1120;
   --bg-card-subtle: #111827;
@@ -48,6 +70,22 @@
   --text-main: #f9fafb;
   --text-muted: #9ca3af;
   --text-faint: #6b7280;
+  --accent-success: #34d399;
+  --text-indigo-400: #a5b4fc;
+  --text-indigo-300: #c7d2fe;
+  --text-indigo-500: #818cf8;
+  --text-emerald-400: #34d399;
+  --text-emerald-300: #6ee7b7;
+  --text-amber-400: #fbbf24;
+  --text-amber-300: #fcd34d;
+  --text-rose-400: #fb7185;
+  --text-rose-300: #fda4af;
+  --text-rose-500: #fb7185;
+  --text-purple-400: #c084fc;
+  --brand-soft: #a5b4fc;
+  --selection-bg: #4338ca;
+  --selection-text: #ffffff;
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.2);
   --accent-glow: rgba(99, 102, 241, 0.16);
   --scrollbar-track: #030712;
   --scrollbar-thumb: #1f2937;
@@ -57,15 +95,31 @@
 
 /* System Preference: Light Mode (when user has not forced dark) */
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
+  :root:not([data-theme='dark']) {
     --bg-app: #f8fafc;
     --bg-card: #ffffff;
     --bg-card-subtle: #f1f5f9;
     --border-subtle: #e2e8f0;
     --border-hover: #cbd5e1;
     --text-main: #0f172a;
-    --text-muted: #64748b;
-    --text-faint: #94a3b8;
+    --text-muted: #475569;
+    --text-faint: #475569;
+    --accent-success: #047857;
+    --text-indigo-400: #4338ca;
+    --text-indigo-300: #4338ca;
+    --text-indigo-500: #4338ca;
+    --text-emerald-400: #047857;
+    --text-emerald-300: #047857;
+    --text-amber-400: #92400e;
+    --text-amber-300: #92400e;
+    --text-rose-400: #be123c;
+    --text-rose-300: #be123c;
+    --text-rose-500: #be123c;
+    --text-purple-400: #6d28d9;
+    --brand-soft: #4338ca;
+    --selection-bg: #c7d2fe;
+    --selection-text: #312e81;
+    --shadow-card: 0 12px 32px rgba(15, 23, 42, 0.08);
     --accent-glow: rgba(99, 102, 241, 0.08);
     --scrollbar-track: #f8fafc;
     --scrollbar-thumb: #cbd5e1;
@@ -75,15 +129,31 @@
 }
 
 /* Explicit User Override: Light Mode */
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   --bg-app: #f8fafc;
   --bg-card: #ffffff;
   --bg-card-subtle: #f1f5f9;
   --border-subtle: #e2e8f0;
   --border-hover: #cbd5e1;
   --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-faint: #94a3b8;
+  --text-muted: #475569;
+  --text-faint: #475569;
+  --accent-success: #047857;
+  --text-indigo-400: #4338ca;
+  --text-indigo-300: #4338ca;
+  --text-indigo-500: #4338ca;
+  --text-emerald-400: #047857;
+  --text-emerald-300: #047857;
+  --text-amber-400: #92400e;
+  --text-amber-300: #92400e;
+  --text-rose-400: #be123c;
+  --text-rose-300: #be123c;
+  --text-rose-500: #be123c;
+  --text-purple-400: #6d28d9;
+  --brand-soft: #4338ca;
+  --selection-bg: #c7d2fe;
+  --selection-text: #312e81;
+  --shadow-card: 0 12px 32px rgba(15, 23, 42, 0.08);
   --accent-glow: rgba(99, 102, 241, 0.08);
   --scrollbar-track: #f8fafc;
   --scrollbar-thumb: #cbd5e1;
@@ -92,7 +162,7 @@
 }
 
 /* Explicit User Override: Dark Mode */
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   --bg-app: #030712;
   --bg-card: #0b1120;
   --bg-card-subtle: #111827;
@@ -100,7 +170,23 @@
   --border-hover: #374151;
   --text-main: #f9fafb;
   --text-muted: #9ca3af;
-  --text-faint: #6b7280;
+  --text-faint: #9ca3af;
+  --accent-success: #34d399;
+  --text-indigo-400: #a5b4fc;
+  --text-indigo-300: #c7d2fe;
+  --text-indigo-500: #818cf8;
+  --text-emerald-400: #34d399;
+  --text-emerald-300: #6ee7b7;
+  --text-amber-400: #fbbf24;
+  --text-amber-300: #fcd34d;
+  --text-rose-400: #fb7185;
+  --text-rose-300: #fda4af;
+  --text-rose-500: #fb7185;
+  --text-purple-400: #c084fc;
+  --brand-soft: #a5b4fc;
+  --selection-bg: #4338ca;
+  --selection-text: #ffffff;
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.2);
   --accent-glow: rgba(99, 102, 241, 0.16);
   --scrollbar-track: #030712;
   --scrollbar-thumb: #1f2937;
@@ -111,7 +197,9 @@
 /* ==========================================================================
    3. BASE & VIEWPORT RESILIENCE (320px to 4K)
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -135,14 +223,89 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:not(:disabled),
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+}
+
+.text-success {
+  color: var(--accent-success);
+}
+
+.text-brand-soft {
+  color: var(--brand-soft);
+}
+
+.text-indigo-400,
+.hover\:text-indigo-400:hover {
+  color: var(--text-indigo-400);
+}
+
+.text-indigo-300,
+.hover\:text-indigo-300:hover {
+  color: var(--text-indigo-300);
+}
+
+.text-indigo-500 {
+  color: var(--text-indigo-500);
+}
+
+.text-emerald-400,
+.text-emerald-300 {
+  color: var(--text-emerald-400);
+}
+
+.text-amber-400,
+.text-amber-300 {
+  color: var(--text-amber-400);
+}
+
+.text-rose-400,
+.text-rose-300,
+.text-rose-500,
+.hover\:text-rose-400:hover {
+  color: var(--text-rose-400);
+}
+
+.text-purple-400 {
+  color: var(--text-purple-400);
+}
+
 /* Universal text containment to prevent 320px mobile blowouts */
-p, h1, h2, h3, h4, h5, h6, span, a, li {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li {
   overflow-wrap: break-word;
   word-break: break-word;
 }
 
 /* Ensure code and preformatted elements scroll internally instead of expanding viewport */
-pre, code {
+pre,
+code {
   font-family: var(--font-mono);
   max-width: 100%;
 }
@@ -158,7 +321,7 @@ pre, code {
 /* Only activate pointer spotlight on devices that support real hover/precise cursor */
 @media (hover: hover) and (pointer: fine) {
   .spotlight-card::before {
-    content: "";
+    content: '';
     position: absolute;
     top: var(--mouse-y, -1000px);
     left: var(--mouse-x, -1000px);
@@ -223,7 +386,9 @@ pre, code {
     scroll-behavior: auto !important;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -13,7 +13,8 @@ export default function PillarsSection() {
             The Five Pillars of Digital OB
           </h3>
           <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
-            Synthesized guidelines addressing the unique structural, cognitive, and interpersonal demands of modern technology-mediated work.
+            Synthesized guidelines addressing the unique structural, cognitive, and interpersonal
+            demands of modern technology-mediated work.
           </p>
         </div>
 

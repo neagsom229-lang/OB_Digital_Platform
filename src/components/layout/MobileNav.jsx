@@ -20,7 +20,39 @@ import { useTheme } from '../../context/ThemeContext'
 
 export default function MobileNav({ isOpen, onClose }) {
   const drawerRef = useRef(null)
-  const { theme, toggleTheme } = useTheme()
+  const { resolvedTheme, toggleTheme } = useTheme()
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+    const previousFocus = document.activeElement
+    const focusable = drawerRef.current?.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    )
+    focusable?.[0]?.focus()
+
+    const trapFocus = (event) => {
+      if (event.key !== 'Tab' || !drawerRef.current) return
+      const items = drawerRef.current.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )
+      if (!items.length) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', trapFocus)
+    return () => {
+      document.removeEventListener('keydown', trapFocus)
+      if (previousFocus instanceof HTMLElement) previousFocus.focus()
+    }
+  }, [isOpen])
 
   // Close on Escape key
   useEffect(() => {
@@ -86,7 +118,7 @@ export default function MobileNav({ isOpen, onClose }) {
         {
           to: '/lexicon',
           label: 'OB Lexicon',
-          subtitle: '40 Standardized Workplace Terms',
+          subtitle: '36 Standardized Workplace Terms',
           icon: BookOpen,
           badge: '40 Terms',
         },
@@ -120,6 +152,7 @@ export default function MobileNav({ isOpen, onClose }) {
           {/* Slide-out Drawer */}
           <motion.aside
             ref={drawerRef}
+            id="mobile-navigation"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation Drawer"
@@ -127,19 +160,21 @@ export default function MobileNav({ isOpen, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="relative w-[88%] max-w-sm h-dvh bg-slate-950/95 backdrop-blur-2xl border-l border-slate-800/80 shadow-2xl flex flex-col justify-between z-10 overflow-hidden"
+            className="relative w-[88%] max-w-sm h-dvh bg-card/95 backdrop-blur-2xl border-l border-subtle shadow-2xl flex flex-col justify-between z-10 overflow-hidden"
           >
             {/* Header */}
-            <div className="px-6 pt-[max(1.25rem,env(safe-area-inset-top))] pb-4 border-b border-slate-800/80 flex items-center justify-between">
+            <div className="px-6 pt-[max(1.25rem,env(safe-area-inset-top))] pb-4 border-b border-subtle flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-sky-500 to-emerald-400 flex items-center justify-center text-white shadow-md shadow-indigo-600/30">
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="font-bold text-sm tracking-tight text-slate-100 flex items-center gap-1.5">
-                    <span>Digital<strong className="text-indigo-400 font-extrabold">OB</strong> Hub</span>
+                  <div className="font-bold text-sm tracking-tight text-main flex items-center gap-1.5">
+                    <span>
+                      Digital<strong className="text-indigo-400 font-extrabold">OB</strong> Hub
+                    </span>
                   </div>
-                  <p className="text-[10px] text-slate-400 font-mono tracking-wider uppercase">
+                  <p className="text-[10px] text-muted font-mono tracking-wider uppercase">
                     Systems for Distributed Work
                   </p>
                 </div>
@@ -147,7 +182,7 @@ export default function MobileNav({ isOpen, onClose }) {
 
               <button
                 onClick={onClose}
-                className="w-8 h-8 rounded-xl flex items-center justify-center text-slate-400 hover:text-slate-100 bg-slate-900 border border-slate-800 active:scale-95 transition-all cursor-pointer"
+                className="w-8 h-8 rounded-xl flex items-center justify-center text-muted hover:text-main bg-card-subtle border border-subtle active:scale-95 transition-all cursor-pointer"
                 aria-label="Close menu"
               >
                 <X className="w-4 h-4" />
@@ -158,7 +193,7 @@ export default function MobileNav({ isOpen, onClose }) {
             <div className="flex-1 overflow-y-auto px-5 py-5 space-y-6 scrollbar-none">
               {navigationGroups.map((group, groupIdx) => (
                 <div key={groupIdx} className="space-y-2">
-                  <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 px-2 font-mono">
+                  <div className="text-[11px] font-bold uppercase tracking-widest text-muted px-2 font-mono">
                     {group.label}
                   </div>
                   <div className="space-y-1.5">
@@ -174,7 +209,7 @@ export default function MobileNav({ isOpen, onClose }) {
                             `group flex items-center justify-between p-3 rounded-2xl border transition-all ${
                               isActive
                                 ? 'bg-indigo-600/15 border-indigo-500/30 shadow-sm shadow-indigo-950/50'
-                                : 'bg-slate-900/50 border-slate-800/60 hover:bg-slate-800/60 hover:border-slate-700'
+                                : 'bg-card-subtle/50 border-subtle hover:bg-card-subtle hover:border-hover'
                             }`
                           }
                         >
@@ -185,7 +220,7 @@ export default function MobileNav({ isOpen, onClose }) {
                                   className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                                     isActive
                                       ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                                      : 'bg-slate-800/80 text-slate-300 group-hover:text-indigo-300 group-hover:bg-slate-800'
+                                      : 'bg-card-subtle text-muted group-hover:text-brand-soft group-hover:bg-card'
                                   }`}
                                 >
                                   <Icon className="w-4 h-4" />
@@ -194,18 +229,20 @@ export default function MobileNav({ isOpen, onClose }) {
                                   <div className="flex items-center gap-2">
                                     <span
                                       className={`text-xs font-semibold truncate ${
-                                        isActive ? 'text-indigo-300' : 'text-slate-200 group-hover:text-white'
+                                        isActive
+                                          ? 'text-brand-soft'
+                                          : 'text-main group-hover:text-main'
                                       }`}
                                     >
                                       {item.label}
                                     </span>
                                     {item.badge && (
-                                      <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium bg-slate-800 text-indigo-300 border border-indigo-500/20">
+                                      <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium bg-card-subtle text-brand-soft border border-indigo-500/20">
                                         {item.badge}
                                       </span>
                                     )}
                                   </div>
-                                  <p className="text-[11px] text-slate-400 truncate mt-0.5">
+                                  <p className="text-[11px] text-muted truncate mt-0.5">
                                     {item.subtitle}
                                   </p>
                                 </div>
@@ -213,7 +250,7 @@ export default function MobileNav({ isOpen, onClose }) {
 
                               <ChevronRight
                                 className={`w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5 ${
-                                  isActive ? 'text-indigo-400' : 'text-slate-400'
+                                  isActive ? 'text-brand-soft' : 'text-muted'
                                 }`}
                               />
                             </>
@@ -227,17 +264,15 @@ export default function MobileNav({ isOpen, onClose }) {
             </div>
 
             {/* Drawer Footer with Theme Switcher */}
-            <div className="p-5 border-t border-slate-800/80 bg-slate-950/70 pb-[max(1.25rem,env(safe-area-inset-bottom))] space-y-3">
-              <div className="flex items-center justify-between p-2 rounded-xl bg-slate-900 border border-slate-800">
-                <span className="text-xs font-medium text-slate-400 pl-2">
-                  Theme Appearance
-                </span>
+            <div className="p-5 border-t border-subtle bg-card/90 pb-[max(1.25rem,env(safe-area-inset-bottom))] space-y-3">
+              <div className="flex items-center justify-between p-2 rounded-xl bg-card-subtle border border-subtle">
+                <span className="text-xs font-medium text-muted pl-2">Theme Appearance</span>
                 <button
                   onClick={toggleTheme}
                   type="button"
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700/60 active:scale-95 transition-all cursor-pointer"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card hover:bg-card-subtle text-xs font-semibold text-main border border-subtle active:scale-95 transition-all cursor-pointer"
                 >
-                  {theme === 'dark' ? (
+                  {resolvedTheme === 'dark' ? (
                     <>
                       <Moon className="w-3.5 h-3.5 text-indigo-400" />
                       <span>Dark</span>
@@ -251,7 +286,7 @@ export default function MobileNav({ isOpen, onClose }) {
                 </button>
               </div>
 
-              <div className="flex items-center justify-between text-[11px] text-slate-400 px-1 font-mono">
+              <div className="flex items-center justify-between text-[11px] text-muted px-1 font-mono">
                 <span>DigitalOB Hub v1.0</span>
                 <span>Edu Reference</span>
               </div>
@@ -260,6 +295,6 @@ export default function MobileNav({ isOpen, onClose }) {
         </div>
       )}
     </AnimatePresence>,
-    document.body
+    document.body,
   )
 }

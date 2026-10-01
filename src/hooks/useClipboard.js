@@ -33,7 +33,7 @@ export function useClipboard(timeout = 2500) {
         return false
       }
     },
-    [timeout]
+    [timeout],
   )
 
   return { copy, copied, error }

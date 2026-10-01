@@ -39,7 +39,11 @@ export default function CharterPreview({ data }) {
         </div>
         <div className="flex items-center gap-2">
           <Button variant="secondary" size="sm" onClick={handleCopy}>
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? (
+              <Check className="w-3.5 h-3.5 text-emerald-400" />
+            ) : (
+              <Copy className="w-3.5 h-3.5" />
+            )}
             {copied ? 'Copied' : 'Copy MD'}
           </Button>
           <Button variant="primary" size="sm" onClick={handleDownload}>
@@ -49,9 +53,9 @@ export default function CharterPreview({ data }) {
         </div>
       </div>
 
-<div className="p-5 flex-1 overflow-auto max-h-[600px] bg-slate-950/40 text-xs font-mono text-slate-300 leading-relaxed whitespace-pre-wrap break-words select-all">
-  {markdown}
-</div>
+      <div className="p-5 flex-1 overflow-auto max-h-[600px] bg-card-subtle text-xs font-mono text-muted leading-relaxed whitespace-pre-wrap break-words select-all">
+        {markdown}
+      </div>
     </div>
   )
 }

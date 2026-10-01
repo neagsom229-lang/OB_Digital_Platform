@@ -14,7 +14,8 @@ export default function PlaybookSection() {
             The Remote Manager&apos;s Trust Playbook
           </h3>
           <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
-            Concrete management protocols designed to cultivate psychological safety, eliminate hybrid bias, and sustain team cohesion across distributed nodes.
+            Concrete management protocols designed to cultivate psychological safety, eliminate
+            hybrid bias, and sustain team cohesion across distributed nodes.
           </p>
         </div>
 

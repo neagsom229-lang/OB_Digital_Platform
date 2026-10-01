@@ -45,7 +45,8 @@ export default function LexiconPage() {
             The Digital OB Lexicon
           </h1>
           <p className="mt-3 text-base text-muted leading-relaxed">
-            36 standardized organizational psychology definitions, execution concepts, and socio-technical terms for remote, hybrid, and AI-enabled teams.
+            36 standardized organizational psychology definitions, execution concepts, and
+            socio-technical terms for remote, hybrid, and AI-enabled teams.
           </p>
         </div>
 

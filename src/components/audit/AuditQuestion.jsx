@@ -5,9 +5,7 @@ export default function AuditQuestion({ question, value, onChange }) {
       <legend className="text-xs font-bold text-indigo-400 uppercase tracking-wider px-1">
         {question.dimension}
       </legend>
-      <p className="text-sm font-medium text-main leading-relaxed">
-        {question.question}
-      </p>
+      <p className="text-sm font-medium text-main leading-relaxed">{question.question}</p>
 
       <div className="space-y-2">
         <div className="grid grid-cols-5 gap-1 sm:gap-2">

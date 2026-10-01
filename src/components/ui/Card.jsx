@@ -23,7 +23,7 @@ export default function Card({
     <Component
       ref={cardRef}
       onPointerMove={handlePointerMove}
-      className={`bg-card border border-subtle rounded-2xl p-6 transition-all duration-200 ${
+      className={`bg-card border border-subtle rounded-[var(--radius-card)] p-6 shadow-[var(--shadow-card)] transition-all duration-200 ${
         spotlight ? 'spotlight-card' : ''
       } ${className}`}
       {...props}

@@ -49,9 +49,7 @@ export default function PillarDetailCard({ pillar }) {
               <ShieldCheck className="w-3.5 h-3.5" />
               Managerial Countermeasure
             </h5>
-            <p className="text-xs sm:text-sm text-muted leading-relaxed">
-              {pillar.countermeasure}
-            </p>
+            <p className="text-xs sm:text-sm text-muted leading-relaxed">{pillar.countermeasure}</p>
           </div>
         </div>
 
@@ -59,7 +57,7 @@ export default function PillarDetailCard({ pillar }) {
           <h5 className="text-xs font-bold text-muted uppercase tracking-wider mb-2">
             Peer-Reviewed Empirical Insight:
           </h5>
-          <blockquote className="border-l-2 border-indigo-500 pl-4 py-1 text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+          <blockquote className="border-l-2 border-indigo-500 pl-4 py-1 text-xs sm:text-sm text-muted italic leading-relaxed">
             &ldquo;{pillar.researchInsight}&rdquo;
           </blockquote>
         </div>

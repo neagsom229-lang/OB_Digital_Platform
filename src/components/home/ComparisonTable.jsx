@@ -15,7 +15,9 @@ export default function ComparisonTable() {
             Traditional (Co-located) vs. Digital (Distributed) Work
           </h3>
           <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
-            Most organizations sit between the two; hybrid work is a spectrum. Moving toward distributed maturity requires deliberately shifting habits across each behavioral dimension.
+            Most organizations sit between the two; hybrid work is a spectrum. Moving toward
+            distributed maturity requires deliberately shifting habits across each behavioral
+            dimension.
           </p>
         </div>
 
@@ -25,13 +27,13 @@ export default function ComparisonTable() {
             <thead>
               <tr className="border-b border-subtle bg-card-subtle/50 text-xs font-semibold text-muted uppercase tracking-wider">
                 <th className="py-4 px-6 w-1/4">Dimension</th>
-                <th className="py-4 px-6 w-3/8 text-slate-300">Traditional (Co-located) Work</th>
+                <th className="py-4 px-6 w-3/8 text-muted">Traditional (Co-located) Work</th>
                 <th className="py-4 px-6 w-3/8 text-indigo-400">Digital (Distributed) Work</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-subtle text-sm">
               {comparisonRows.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-800/20 transition-colors">
+                <tr key={idx} className="hover:bg-card-subtle transition-colors">
                   <td className="py-4 px-6 font-semibold text-main align-top">{row.dimension}</td>
                   <td className="py-4 px-6 text-muted leading-relaxed align-top">
                     {row.traditional}

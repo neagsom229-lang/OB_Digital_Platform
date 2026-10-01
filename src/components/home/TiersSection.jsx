@@ -52,7 +52,8 @@ export default function TiersSection() {
             The Three Levels of Organizational Behavior
           </h3>
           <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
-            Classic OB categorizes organizational life into Micro, Meso, and Macro dynamics. In technology-mediated work, each level faces distinct pressures.
+            Classic OB categorizes organizational life into Micro, Meso, and Macro dynamics. In
+            technology-mediated work, each level faces distinct pressures.
           </p>
         </div>
 

@@ -27,18 +27,8 @@ export default function AuditRadarChart({ answers }) {
             dataKey="dimension"
             tick={{ fill: '#9ca3af', fontSize: 11, fontWeight: 500 }}
           />
-          <PolarRadiusAxis
-            angle={30}
-            domain={[0, 5]}
-            tick={{ fill: '#6b7280', fontSize: 9 }}
-          />
-          <Radar
-            name="Score"
-            dataKey="value"
-            stroke="#6366f1"
-            fill="#6366f1"
-            fillOpacity={0.4}
-          />
+          <PolarRadiusAxis angle={30} domain={[0, 5]} tick={{ fill: '#6b7280', fontSize: 9 }} />
+          <Radar name="Score" dataKey="value" stroke="#6366f1" fill="#6366f1" fillOpacity={0.4} />
         </RadarChart>
       </ResponsiveContainer>
     </div>
