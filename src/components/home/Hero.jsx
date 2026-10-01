@@ -66,19 +66,21 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="mt-8 flex flex-wrap gap-3 sm:gap-4"
           >
-            <Link to="/charter">
-              <Button size="lg" className="w-full sm:w-auto">
-                <FileText className="w-4 h-4" />
-                Build Team Charter
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-            <Link to="/audit">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                Take Health Audit
-              </Button>
-            </Link>
+            <Button as={Link} to="/charter" size="lg" className="w-full sm:w-auto">
+              <FileText className="w-4 h-4" />
+              Build Team Charter
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
+            <Button
+              as={Link}
+              to="/audit"
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              Take Health Audit
+            </Button>
           </motion.div>
 
           <HeroStats />

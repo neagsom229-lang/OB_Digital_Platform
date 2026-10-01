@@ -44,6 +44,7 @@ Vite prints the local URL when the development server is ready.
 npm run dev          # Start the local development server
 npm run build        # Create the production build in dist/
 npm run preview      # Preview the production build
+npm run sitemap -- https://your-public-domain.example # Generate public/sitemap.xml
 npm run lint         # Run ESLint
 npm run format       # Format application source, config, and documentation
 npm run format:check # Check formatting without changing files
@@ -72,6 +73,15 @@ Curriculum content lives in `src/data/curriculum.js`. Its JSDoc schema documents
 ## Screenshots
 
 Add current desktop and mobile screenshots in `docs/images/` and replace the placeholder above.
+
+Generate sitemap and absolute canonical/Open Graph URLs for the deployment before building:
+
+```bash
+npm run sitemap -- https://your-public-domain.example
+npm run build
+```
+
+The Vercel SPA rewrite serves direct lesson URLs; `robots.txt` allows public routes to be crawled.
 
 ## Deployment
 

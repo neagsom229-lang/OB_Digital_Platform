@@ -4,6 +4,7 @@ import { forwardRef } from 'react'
 const Button = forwardRef(function Button(
   {
     children,
+    as: Component = 'button',
     variant = 'primary',
     size = 'md',
     className = '',
@@ -35,15 +36,15 @@ const Button = forwardRef(function Button(
   }
 
   return (
-    <button
+    <Component
       ref={ref}
-      type={type}
-      disabled={disabled}
+      type={Component === 'button' ? type : undefined}
+      disabled={Component === 'button' ? disabled : undefined}
       className={`${baseStyles} ${variants[variant] || variants.primary} ${sizes[size] || sizes.md} ${className}`}
       {...props}
     >
       {children}
-    </button>
+    </Component>
   )
 })
 
