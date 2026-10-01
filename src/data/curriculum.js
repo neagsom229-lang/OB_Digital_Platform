@@ -1,17 +1,44 @@
 // FILE: src/data/curriculum.js
+/**
+ * @typedef {Object} CurriculumModule
+ * @property {string} id
+ * @property {'Micro' | 'Meso' | 'Macro'} tier
+ * @property {number} moduleNumber
+ * @property {string} title
+ * @property {string} description
+ * @property {'Beginner' | 'Intermediate' | 'Advanced'} difficulty
+ * @property {number} readingTime
+ * @property {string[]} tags
+ * @property {string[]} academicFoundations
+ * @property {string} coreConcept
+ * @property {string} digitalManifestation
+ * @property {string} caseStudy
+ * @property {string[]} keyTakeaways
+ */
+
+/** @type {CurriculumModule[]} */
 export const curriculumModules = [
   {
     id: 'mod-01',
     tier: 'Micro',
     moduleNumber: 1,
     title: 'Personality & Individual Differences in Remote Work',
-    academicFoundations: ['Costa & McCrae (Big Five)', 'Bandura (Self-Efficacy)', 'Rotter (Locus of Control)'],
+    description:
+      'Explore how personality, self-efficacy, and locus of control shape a person’s experience of autonomous remote work. The lesson connects those individual differences to practical onboarding and communication supports.',
+    difficulty: 'Beginner',
+    readingTime: 6,
+    tags: ['Micro OB', 'Personality', 'Self-efficacy', 'Remote work'],
+    academicFoundations: [
+      'Costa & McCrae (Big Five)',
+      'Bandura (Self-Efficacy)',
+      'Rotter (Locus of Control)',
+    ],
     coreConcept:
-      'How stable personality traits and self-regulatory capacities dictate an individual\'s adaptability to high-autonomy, low-supervision digital environments.',
+      "How stable personality traits and self-regulatory capacities dictate an individual's adaptability to high-autonomy, low-supervision digital environments.",
     digitalManifestation:
       'High Conscientiousness predicts remote performance, but High Neuroticism amplifies telepressure. High Extraversion requires deliberate virtual social channels to avoid isolation.',
     caseStudy:
-      'Engineering onboarding without physical peers: using Bandura\'s enactive mastery (small PR wins) to build self-efficacy in early-career developers.',
+      "Engineering onboarding without physical peers: using Bandura's enactive mastery (small PR wins) to build self-efficacy in early-career developers.",
     keyTakeaways: [
       'Internal Locus of Control thrives in asynchronous models; external locus requires structured feedback loops.',
       'Emotional Intelligence (EQ) in digital work shifts toward text-based empathy and tone regulation.',
@@ -23,7 +50,16 @@ export const curriculumModules = [
     tier: 'Micro',
     moduleNumber: 2,
     title: 'Perception, Attribution & Cognitive Biases in Written Channels',
-    academicFoundations: ['Heider & Kelley (Attribution Theory)', 'Kahneman & Tversky (System 1 & 2)', 'Nickerson (Confirmation Bias)'],
+    description:
+      'Examine how people interpret ambiguous behavior and information, especially in text-based work. The lesson applies attribution theory and cognitive-bias concepts to reviews, chat, and written decision-making.',
+    difficulty: 'Intermediate',
+    readingTime: 7,
+    tags: ['Micro OB', 'Cognitive bias', 'Communication', 'Attribution'],
+    academicFoundations: [
+      'Heider & Kelley (Attribution Theory)',
+      'Kahneman & Tversky (System 1 & 2)',
+      'Nickerson (Confirmation Bias)',
+    ],
     coreConcept:
       'The cognitive shortcuts and evaluative distortions people make when interpreting ambiguous data or interpersonal actions.',
     digitalManifestation:
@@ -41,13 +77,23 @@ export const curriculumModules = [
     tier: 'Micro',
     moduleNumber: 3,
     title: 'Motivation Architecture: Beyond Simple Extrinsics',
-    academicFoundations: ['Deci & Ryan (SDT)', 'Vroom (Expectancy Theory)', 'Locke & Latham (Goal-Setting)', 'Adams (Equity Theory)'],
+    description:
+      'Compare intrinsic motivation, goal-setting, expectancy, and equity perspectives in autonomous work. The examples contrast outcome-focused support with surveillance and activity tracking.',
+    difficulty: 'Intermediate',
+    readingTime: 7,
+    tags: ['Micro OB', 'Motivation', 'Goal-setting', 'Fairness'],
+    academicFoundations: [
+      'Deci & Ryan (SDT)',
+      'Vroom (Expectancy Theory)',
+      'Locke & Latham (Goal-Setting)',
+      'Adams (Equity Theory)',
+    ],
     coreConcept:
       'How intrinsic drivers, perceived fairness, and transparent goal clarity produce sustainable cognitive output without physical oversight.',
     digitalManifestation:
-      'Locke & Latham\'s goal-setting directly translates to modern Objectives and Key Results (OKRs). When employees work remotely, Adams\' Equity Theory manifests in sensitivity to salary transparency and equitable access to senior leaders.',
+      "Locke & Latham's goal-setting directly translates to modern Objectives and Key Results (OKRs). When employees work remotely, Adams' Equity Theory manifests in sensitivity to salary transparency and equitable access to senior leaders.",
     caseStudy:
-      'Transitioning from activity tracking (keystrokes) to Vroom\'s Expectancy framework: ensuring contributors see a direct link between effort, high-quality PR merges, and compensation review.',
+      "Transitioning from activity tracking (keystrokes) to Vroom's Expectancy framework: ensuring contributors see a direct link between effort, high-quality PR merges, and compensation review.",
     keyTakeaways: [
       'Extrinsic surveillance destroys intrinsic motivation (Deci & Ryan).',
       'Goals must be specific, measurable, and challenging, with continuous asynchronous telemetry.',
@@ -59,7 +105,16 @@ export const curriculumModules = [
     tier: 'Micro',
     moduleNumber: 4,
     title: 'Cognitive Ergonomics, Technostress & Detachment',
-    academicFoundations: ['Sonnentag (Psychological Detachment)', 'Tarafdar et al. (Technostress)', 'Leroy (Attention Residue)'],
+    description:
+      'Understand how interruptions, technology demands, and attention residue affect focus and recovery. The lesson connects these pressures to boundaries and practical team norms.',
+    difficulty: 'Intermediate',
+    readingTime: 6,
+    tags: ['Micro OB', 'Focus', 'Technostress', 'Wellbeing'],
+    academicFoundations: [
+      'Sonnentag (Psychological Detachment)',
+      'Tarafdar et al. (Technostress)',
+      'Leroy (Attention Residue)',
+    ],
     coreConcept:
       'The neurobiological limits of attention, the cost of interruption cascades, and the science of recovery experiences.',
     digitalManifestation:
@@ -77,13 +132,22 @@ export const curriculumModules = [
     tier: 'Meso',
     moduleNumber: 5,
     title: 'Virtual Team Dynamics, Social Loafing & Swift Trust',
-    academicFoundations: ['Tuckman (Stages of Group Development)', 'Meyerson et al. (Swift Trust)', 'Ringelmann (Social Loafing)'],
+    description:
+      'Learn how distributed groups develop shared expectations and sustain contribution without co-location. The lesson emphasizes role clarity, visible work, and task-based swift trust.',
+    difficulty: 'Beginner',
+    readingTime: 6,
+    tags: ['Meso OB', 'Virtual teams', 'Trust', 'Accountability'],
+    academicFoundations: [
+      'Tuckman (Stages of Group Development)',
+      'Meyerson et al. (Swift Trust)',
+      'Ringelmann (Social Loafing)',
+    ],
     coreConcept:
       'How distributed groups form, align, establish norms, and prevent disengagement without physical proximity.',
     digitalManifestation:
       'Virtual teams often skip informal "Storming" and stay in artificial politeness, or fragment due to lack of shared context. Swift trust replaces long-term social bonding with clear role clarity and rapid initial deliverables.',
     caseStudy:
-      'Designing an Agile squad\'s initial sprint zero: using a Team Working Agreement to accelerate directly from Forming to Norming in under 2 weeks.',
+      "Designing an Agile squad's initial sprint zero: using a Team Working Agreement to accelerate directly from Forming to Norming in under 2 weeks.",
     keyTakeaways: [
       'Social loafing increases when individual contribution is opaque; public project boards restore accountability.',
       'Swift trust is task-based, fragile, and maintained through predictability and prompt delivery.',
@@ -95,7 +159,16 @@ export const curriculumModules = [
     tier: 'Meso',
     moduleNumber: 6,
     title: 'Asynchronous Conflict Management & Psychological Safety',
-    academicFoundations: ['Edmondson (Psychological Safety)', 'Thomas & Kilmann (TKI Conflict Model)', 'Jehn (Task vs. Relationship Conflict)'],
+    description:
+      'Distinguish task disagreement from relationship conflict and consider how lean digital channels can blur the difference. The examples focus on creating safer, more constructive async discussion.',
+    difficulty: 'Intermediate',
+    readingTime: 7,
+    tags: ['Meso OB', 'Conflict', 'Psychological safety', 'Async work'],
+    academicFoundations: [
+      'Edmondson (Psychological Safety)',
+      'Thomas & Kilmann (TKI Conflict Model)',
+      'Jehn (Task vs. Relationship Conflict)',
+    ],
     coreConcept:
       'Navigating interpersonal and task disagreements across digital media while maintaining team vulnerability and voice.',
     digitalManifestation:
@@ -113,7 +186,16 @@ export const curriculumModules = [
     tier: 'Meso',
     moduleNumber: 7,
     title: 'E-Leadership & Situational Delegation',
-    academicFoundations: ['Avolio & Kahai (E-Leadership)', 'Hersey & Blanchard (Situational Leadership)', 'Graen & Uhl-Bien (LMX Theory)'],
+    description:
+      'Explore how leaders adapt direction and support to team members while working through digital channels. The lesson also highlights proximity bias and equitable access to sponsorship.',
+    difficulty: 'Intermediate',
+    readingTime: 6,
+    tags: ['Meso OB', 'Leadership', 'Delegation', 'Hybrid equity'],
+    academicFoundations: [
+      'Avolio & Kahai (E-Leadership)',
+      'Hersey & Blanchard (Situational Leadership)',
+      'Graen & Uhl-Bien (LMX Theory)',
+    ],
     coreConcept:
       'Leading teams through digital interfaces: balancing supportive versus directive behavior depending on individual team maturity.',
     digitalManifestation:
@@ -123,7 +205,7 @@ export const curriculumModules = [
     keyTakeaways: [
       'E-leadership requires intentional communication redundancy (saying it in chat, in a memo, and in all-hands).',
       'Situational leadership: high task direction for junior hires via pair programming; high autonomy for senior staff.',
-      'A manager\'s primary remote role is unblocking friction and clarifying priorities, not monitoring effort.',
+      "A manager's primary remote role is unblocking friction and clarifying priorities, not monitoring effort.",
     ],
   },
   {
@@ -131,7 +213,16 @@ export const curriculumModules = [
     tier: 'Meso',
     moduleNumber: 8,
     title: 'Human-AI Teaming, Co-Intelligence & The Jagged Frontier',
-    academicFoundations: ['Mollick (Co-Intelligence)', 'Dell\'Acqua et al. (Jagged Technological Frontier)', 'Parasuraman et al. (Automation Trust)'],
+    description:
+      'Examine how people divide work with AI systems and why capability can vary across seemingly related tasks. The lesson emphasizes calibrated trust, clear boundaries, and human accountability.',
+    difficulty: 'Advanced',
+    readingTime: 7,
+    tags: ['Meso OB', 'Human-AI teaming', 'Trust', 'Automation'],
+    academicFoundations: [
+      'Mollick (Co-Intelligence)',
+      "Dell'Acqua et al. (Jagged Technological Frontier)",
+      'Parasuraman et al. (Automation Trust)',
+    ],
     coreConcept:
       'Integrating generative AI agents and algorithmic co-pilots into interpersonal team workflows and cognitive division of labor.',
     digitalManifestation:
@@ -149,7 +240,16 @@ export const curriculumModules = [
     tier: 'Macro',
     moduleNumber: 9,
     title: 'Power, Influence & Digital Organizational Politics',
-    academicFoundations: ['French & Raven (Bases of Power)', 'Pfeffer (Power in Organizations)', 'Cialdini (Influence Principles)'],
+    description:
+      'Consider how power and influence shift when work and decisions move into digital systems. The examples focus on documentation, public RFCs, and informal influence in online channels.',
+    difficulty: 'Advanced',
+    readingTime: 6,
+    tags: ['Macro OB', 'Power', 'Influence', 'Governance'],
+    academicFoundations: [
+      'French & Raven (Bases of Power)',
+      'Pfeffer (Power in Organizations)',
+      'Cialdini (Influence Principles)',
+    ],
     coreConcept:
       'How authority, leverage, and political coalition-building operate when physical executive suites and watercooler lobbying are absent.',
     digitalManifestation:
@@ -167,7 +267,16 @@ export const curriculumModules = [
     tier: 'Macro',
     moduleNumber: 10,
     title: 'Organizational Culture Without Physical Spaces',
-    academicFoundations: ['Schein (Three Levels of Culture)', 'Cameron & Quinn (Competing Values Framework)', 'Ouchi (Theory Z)'],
+    description:
+      'Apply organizational-culture frameworks to norms and artifacts that emerge in distributed teams. The lesson considers documentation, communication practices, and digital onboarding as culture carriers.',
+    difficulty: 'Intermediate',
+    readingTime: 6,
+    tags: ['Macro OB', 'Culture', 'Onboarding', 'Distributed work'],
+    academicFoundations: [
+      'Schein (Three Levels of Culture)',
+      'Cameron & Quinn (Competing Values Framework)',
+      'Ouchi (Theory Z)',
+    ],
     coreConcept:
       'Sustaining shared norms, values, and organizational identity when there are no branded offices, communal kitchens, or physical rituals.',
     digitalManifestation:
@@ -185,7 +294,16 @@ export const curriculumModules = [
     tier: 'Macro',
     moduleNumber: 11,
     title: 'Cross-Cultural OB in Global Asynchronous Teams',
-    academicFoundations: ['Hofstede (Cultural Dimensions)', 'Meyer (The Culture Map)', 'Hall (High vs. Low Context Communication)'],
+    description:
+      'Explore how cultural expectations can shape communication, feedback, and participation in global teams. The examples connect explicit writing and meeting-time rotation to cross-cultural coordination.',
+    difficulty: 'Advanced',
+    readingTime: 6,
+    tags: ['Macro OB', 'Cross-cultural teams', 'Communication', 'Time zones'],
+    academicFoundations: [
+      'Hofstede (Cultural Dimensions)',
+      'Meyer (The Culture Map)',
+      'Hall (High vs. Low Context Communication)',
+    ],
     coreConcept:
       'Managing psychological differences in communication style, authority deference, and feedback across international distributed nodes.',
     digitalManifestation:
@@ -203,13 +321,22 @@ export const curriculumModules = [
     tier: 'Macro',
     moduleNumber: 12,
     title: 'Digital Change Management & Structural Transformation',
-    academicFoundations: ['Kotter (8-Step Change Model)', 'Lewin (Force Field Analysis)', 'Conway (Conway\'s Law)'],
+    description:
+      'Review change-management and organizational-design ideas through examples of operating-model shifts and tooling changes. The lesson stresses addressing incentives and team structure alongside process changes.',
+    difficulty: 'Advanced',
+    readingTime: 6,
+    tags: ['Macro OB', 'Change management', 'Organization design', 'Async work'],
+    academicFoundations: [
+      'Kotter (8-Step Change Model)',
+      'Lewin (Force Field Analysis)',
+      "Conway (Conway's Law)",
+    ],
     coreConcept:
       'Guiding organizations through structural shifts, tooling migrations, and operating model re-architectures.',
     digitalManifestation:
       'Lewin\'s "Unfreezing" stage requires proving the cost of meeting sprawl and presenteeism through team health telemetry before attempting to enforce async-first policies.',
     caseStudy:
-      'Executing a company-wide transition from 30 weekly synchronous status meetings to automated asynchronous standups using Kotter\'s model (creating urgency, building a guiding coalition).',
+      "Executing a company-wide transition from 30 weekly synchronous status meetings to automated asynchronous standups using Kotter's model (creating urgency, building a guiding coalition).",
     keyTakeaways: [
       'Change fails when leaders change tools (e.g., introducing Notion or Slack) without changing behavioral incentive structures.',
       'Inverse Conway Maneuver: restructuring teams to force a more decoupled, resilient software architecture.',
